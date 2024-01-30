@@ -55,7 +55,7 @@ public class HelpdeskRun extends HelpdeskDetail {
 	public Map<String, String> dataMap = new HashMap<String, String>();
 	public ExtentReports extent;
 
-	public WebDriver driver;
+	public WebDriver driver;  
 	String[][] data = null; 
 
 	@DataProvider(name = "itemsdata")
