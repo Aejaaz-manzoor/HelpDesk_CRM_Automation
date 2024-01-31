@@ -23,6 +23,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.touch.ScrollAction;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -31,7 +33,7 @@ import com.aventstack.extentreports.Status;
 import groovyjarjarantlr4.v4.codegen.model.Action;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Baseclass extends HelpdeskElements {
+public class Baseclass_QE extends HelpdeskElements {
 	public WebDriver driver;
 	static SimpleDateFormat dateFormat21 = new SimpleDateFormat("d");
 	static String currentDate = dateFormat21.format(new java.util.Date());
@@ -66,17 +68,17 @@ public class Baseclass extends HelpdeskElements {
 		HelpdeskElements.Password.sendKeys("Vakil@123");
 		Thread.sleep(3000);
 		HelpdeskElements.Signin.click();
-//		Thread.sleep(5000);
+		Thread.sleep(5000);
 //		HelpdeskElements.Logoclick.click();
 		
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		HelpdeskElements.Activity_status.click();
-		Thread.sleep(3000);
-		HelpdeskElements.Freeze.click();
-		Thread.sleep(7000);
-		HelpdeskElements.Start_working.click();
-		Thread.sleep(3000);
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		HelpdeskElements.Activity_status.click();
+//		Thread.sleep(3000);
+//		HelpdeskElements.Freeze.click();
+//		Thread.sleep(7000);
+//		HelpdeskElements.Start_working.click();
+//		Thread.sleep(3000);
 		
 
 //Filters
@@ -829,62 +831,68 @@ System.out.println("Current date:"+ currentDate);
 		
 		//Quotation creation
 //		
-		 JavascriptExecutor dw222 = (JavascriptExecutor) driver;
-			dw222.executeScript("window.scrollBy(0, 1200)");
-			Thread.sleep(2000);
-			String clicklnk2 = Keys.chord(Keys.CONTROL, Keys.ENTER);
-			HelpdeskElements.Createquotation.sendKeys(clicklnk2);
-			Thread.sleep(6000);
-			Set<String> windows1 = driver.getWindowHandles();
-			for (String window1 : windows1) {
-				driver.switchTo().window(window1);
-			}
+//		 JavascriptExecutor dw222 = (JavascriptExecutor) driver;
+//			dw222.executeScript("window.scrollBy(0, 1200)");
+//			Thread.sleep(2000);
+//			String clicklnk2 = Keys.chord(Keys.CONTROL, Keys.ENTER);
+//			HelpdeskElements.Createquotation.sendKeys(clicklnk2);
+//			Thread.sleep(6000);
+//			Set<String> windows1 = driver.getWindowHandles();
+//			for (String window1 : windows1) {
+//				driver.switchTo().window(window1);
+//			}
 //			HelpdeskElements.Quotation_name.sendKeys("Aejaaz");
 //			Thread.sleep(5000);
 //			HelpdeskElements.Quotation_address.sendKeys("21 jump street, chennai - 74");
 //			Thread.sleep(5000);
 //			HelpdeskElements.Quotation_pincode.sendKeys("600074");
 //			Thread.sleep(5000);
-			Thread.sleep(5000);
-			HelpdeskElements.Quotation_gstin.clear();
-			Thread.sleep(3000);
-			HelpdeskElements.Quotation_gstin.sendKeys("10AABCU9603R1Z2");
-			Thread.sleep(5000);
-			HelpdeskElements.Addr_verify.click();
-			Thread.sleep(5000);
-			WebElement Quotestrtdate = driver.findElement(By.xpath("//input[@name='calculator[" + ticketid + "][start_date]']"));
-			Quotestrtdate.click();
-			Thread.sleep(6000);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(5000);
-			robot.keyPress(KeyEvent.VK_TAB);
-			robot.keyRelease(KeyEvent.VK_TAB);
-			Thread.sleep(5000);
-			HelpdeskElements.Year_next.click();
-			Thread.sleep(5000);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(5000);
-			HelpdeskElements.Quoteconfirm.click();
-			Thread.sleep(5000);
-			JavascriptExecutor dw225 = (JavascriptExecutor) driver;
-			dw225.executeScript("window.scrollBy(0, 500)");
-			HelpdeskElements.Quotesend.click();
+//			Thread.sleep(5000);
+//			HelpdeskElements.Quotation_gstin.clear();
+//			Thread.sleep(3000);
+//			HelpdeskElements.Quotation_gstin.sendKeys("10AABCU9603R1Z2");
+//			Thread.sleep(5000);
+//			HelpdeskElements.Addr_verify.click();
+//			Thread.sleep(5000);
+//			WebElement Quotestrtdate = driver.findElement(By.xpath("//input[@name='calculator[" + ticketid + "][start_date]']"));
+//			Quotestrtdate.click();
+//			Thread.sleep(6000);
+//			robot.keyPress(KeyEvent.VK_ENTER);
+//			robot.keyRelease(KeyEvent.VK_ENTER);
+//			Thread.sleep(5000);
+//			robot.keyPress(KeyEvent.VK_TAB);
+//			robot.keyRelease(KeyEvent.VK_TAB);
+//			Thread.sleep(5000);
+//			HelpdeskElements.Year_next.click();
+//			Thread.sleep(5000);
+//			robot.keyPress(KeyEvent.VK_ENTER);
+//			robot.keyRelease(KeyEvent.VK_ENTER);
+//			Thread.sleep(5000);
+//			HelpdeskElements.Quoteconfirm.click();
+//			Thread.sleep(5000);
+//			JavascriptExecutor dw225 = (JavascriptExecutor) driver;
+//			dw225.executeScript("window.scrollBy(0, 500)");
+//			HelpdeskElements.QuotesendQE.click();
 //			Thread.sleep(3000);
 //			HelpdeskElements.Quotedeactive_NO.click();
-			Thread.sleep(6000);
-			driver.close();
-			List<String> switchtab = new ArrayList<String>(driver.getWindowHandles());
-			driver.switchTo().window(switchtab.get(1));
+//			Thread.sleep(6000);
+//			driver.close();
+//			List<String> switchtab = new ArrayList<String>(driver.getWindowHandles());
+//			driver.switchTo().window(switchtab.get(1));
+//			Thread.sleep(5000);
+//			driver.navigate().refresh();
+//			Thread.sleep(5000);
+//			JavascriptExecutor dw213 = (JavascriptExecutor) driver;
+//			dw213.executeScript("window.scrollBy(0, -2000)");
 			Thread.sleep(5000);
-			driver.navigate().refresh();
+			By elementLocator = By.id("load_quotation");
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.presenceOfElementLocated(elementLocator));
+			WebElement element = driver.findElement(elementLocator);
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 			Thread.sleep(5000);
-			JavascriptExecutor dw213 = (JavascriptExecutor) driver;
-			dw213.executeScript("window.scrollBy(0, 1000)");
-			Thread.sleep(2000);
-			By elementLocator = By.id("//div[@class='quotations_attachments']");
-			ScrollAction(driver, elementLocator);
+			
+
 //	    
 	    
 	    //Paynow Quotation
@@ -947,10 +955,10 @@ System.out.println("Current date:"+ currentDate);
 //	    Quotation generate
 		
 
-//		HelpdeskElements.Quotationload.click();
-//		Thread.sleep(5000);
-//		HelpdeskElements.Quotegenerate.click();
-//		Thread.sleep(6000);
+		HelpdeskElements.Quotationload.click();
+		Thread.sleep(5000);
+		HelpdeskElements.Quotegenerate.click();
+		Thread.sleep(6000);
 //		 List<String> all29 = new ArrayList<String>(driver.getWindowHandles());
 //		driver.switchTo().window(all29.get(0));
 //		Thread.sleep(3000);

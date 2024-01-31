@@ -788,8 +788,8 @@ public class HelpdeskElements{
 
 	
 	
-//	@FindBy (xpath = "")
-//	public static WebElement  ;
+	@FindBy (xpath = "//a[contains(text(),'Send')]")
+	public static WebElement QuotesendQE ;
 	
 //	@FindBy (xpath = "")
 //	public static WebElement  ;
